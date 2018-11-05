@@ -48,6 +48,7 @@ class _PageViewIndicatorState extends State<PageViewIndicator>
               duration: Duration(milliseconds: 200),
             )));
 
+    _prevPage = widget.currentPage;
     _indicators[widget.currentPage].normalController.reverse();
     _indicators[widget.currentPage].highlightedController.forward();
 
