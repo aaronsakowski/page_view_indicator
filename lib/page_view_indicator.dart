@@ -15,12 +15,14 @@ class PageViewIndicator extends StatefulWidget {
     this.normalBuilder,
     this.highlightedBuilder,
     this.currentPage = 0,
+    this.indicatorPadding = const EdgeInsets.all(8.0),
   }) : super(key: key);
 
   final ValueNotifier<int> pageIndexNotifier;
   final int length;
   final IndicatorBuilder normalBuilder;
   final IndicatorBuilder highlightedBuilder;
+  final EdgeInsets indicatorPadding;
   final int currentPage;
 
   @override
@@ -85,7 +87,7 @@ class _PageViewIndicatorState extends State<PageViewIndicator>
 
   Widget _buildIndicator(Indicator indicator) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: widget.indicatorPadding,
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
